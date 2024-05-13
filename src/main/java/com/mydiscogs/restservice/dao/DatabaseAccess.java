@@ -33,21 +33,21 @@ public class DatabaseAccess {
 	// view albums in database
 	public List<Album> viewAlbums() {
 		MapSqlParameterSource namedParameters = new MapSqlParameterSource();
-		String query = "SELECT * FROM albums ORDER BY id ASC;";
+		String query = "SELECT * FROM albums ORDER BY artist ASC;";
 		return jdbc.query(query, namedParameters, new BeanPropertyRowMapper<Album>(Album.class));
 	}
 	
 	// Method to return list of owned albums
 	public List<Album> viewOwned() {
 		MapSqlParameterSource namedParameters = new MapSqlParameterSource();
-		String query = "SELECT * FROM albums WHERE ownership = 'Owned' ORDER BY id ASC;";
+		String query = "SELECT * FROM albums WHERE ownership = 'Owned' ORDER BY artist ASC;";
 		return jdbc.query(query, namedParameters, new BeanPropertyRowMapper<Album>(Album.class));
 	}
 	
 	// Method to return list of wishlist albums
 	public List<Album> viewWishlist() {
 		MapSqlParameterSource namedParameters = new MapSqlParameterSource();
-		String query = "SELECT * FROM albums WHERE ownership = 'Wishlist' ORDER BY id ASC;";
+		String query = "SELECT * FROM albums WHERE ownership = 'Wishlist' ORDER BY artist ASC;";
 		return jdbc.query(query, namedParameters, new BeanPropertyRowMapper<Album>(Album.class));
 	}
 

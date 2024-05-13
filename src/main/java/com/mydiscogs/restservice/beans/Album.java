@@ -1,7 +1,5 @@
 package com.mydiscogs.restservice.beans;
 
-import java.io.Serializable;
-
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import jakarta.persistence.Entity;
@@ -19,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity
 @EntityScan
-public class Album implements Serializable {
+public class Album {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
